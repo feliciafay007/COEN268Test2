@@ -1,1 +1,1 @@
-include ':app', ':sharepreferencedemo', ':preferenceactivity2'
+include ':app', ':preferenceactivity2'

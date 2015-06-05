@@ -8,4 +8,8 @@
     <item
         android:id="@+id/preferences"
         android:title="Preferences" />
+    <item android:id="@+id/showSavedPreference"
+        android:title="show saved preference"
+        android:orderInCategory="100"
+        app:showAsAction="never" />
 </menu>

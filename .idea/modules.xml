@@ -5,7 +5,6 @@
       <module fileurl="file://$PROJECT_DIR$/COEN268Tests2.iml" filepath="$PROJECT_DIR$/COEN268Tests2.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/preferenceactivity2/preferenceactivity2.iml" filepath="$PROJECT_DIR$/preferenceactivity2/preferenceactivity2.iml" />
-      <module fileurl="file://$PROJECT_DIR$/sharepreferencedemo/sharepreferencedemo.iml" filepath="$PROJECT_DIR$/sharepreferencedemo/sharepreferencedemo.iml" />
     </modules>
   </component>
 </project>

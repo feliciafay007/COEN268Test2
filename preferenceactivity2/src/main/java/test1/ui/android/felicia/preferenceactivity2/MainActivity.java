@@ -34,6 +34,11 @@ public class MainActivity extends ActionBarActivity {
                 startActivity(intent);
                 return true;
             }
+            case R.id.showSavedPreference:
+            {
+                Intent intent = new Intent(MainActivity.this, ShowSavedSharedPreference.class);
+                startActivity(intent);
+            }
         }
         return super.onOptionsItemSelected(item);
     }
