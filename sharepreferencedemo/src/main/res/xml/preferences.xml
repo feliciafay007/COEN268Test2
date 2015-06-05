@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+<PreferenceCategory
+    android:title = "Start Fantasia Basic">
+    <CheckBoxPreference
+        android:key = "partner_explore_preference"
+        android:title = "Explorer"
+        android:summary = "Explore the galaxy"
+        android:defaultValue = "false"/>
+    <CheckBoxPreference
+        android:key = "child_explore_preference"
+        android:dependency = "partner_explore_preference"
+        android:title = "Extra-Galactic"
+        android:layout = "?android:attr/preferenceLayoutChild"
+        android:summary = "Explore beyond the galaxy"
+        android:defaultValue = "false"/>
+    <CheckBoxPreference
+        android:key = "guide_preference"
+        android:title = "Guide"
+        android:summary = "Guide Explore"
+        android:defaultValue = "false"/>
+    <CheckBoxPreference
+        android:key = "citizen_preference"
+        android:title = "Citizen"
+        android:summary = "Galactic Citizen"
+        android:defaultValue = "false"/>
+</PreferenceCategory>
+<PreferenceCategory
+    android:title = "Galatic Identification">
+    <EditTextPreference
+        android:key = "name_preference"
+        android:title = "Galatic Name"
+        android:summary = "what is your Galactic Name?"
+        android:dialogTitle = "Enter your Galactic Name"/>
+</PreferenceCategory>
+<PreferenceCategory
+    android:title = "Using an Intent">
+    <PreferenceScreen
+        android:title = "Headers Preference"
+        android:summary = "Use Intent to see Headers">
+        <Intent android:targetPackage = "com.android."
+            android:targetClass = "HeadersActivity"/>
+    </PreferenceScreen>
+</PreferenceCategory>
+</PreferenceScreen>

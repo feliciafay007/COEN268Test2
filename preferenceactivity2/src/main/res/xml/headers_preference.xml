@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<preference-headers
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <header
+        android:fragment="test1.ui.android.felicia.preferenceactivity2.MyPreferenceFragment"
+        android:title="Goto: Preference fragment One"
+        android:summary="An example of some first preferences.An example of some preferences.An example of some preferences." />
+
+    <header
+        android:fragment="test1.ui.android.felicia.preferenceactivity2.MyPreferenceFragment"
+        android:title="Goto: Preference fragment Two"
+        android:summary="An example of some second preferences.An example of some preferences.An example of some preferences." />
+</preference-headers>
