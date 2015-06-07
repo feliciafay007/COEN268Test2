@@ -1,1 +1,1 @@
-include ':app', ':preferenceactivity2', ':fileio'
+include ':app', ':preferenceactivity2', ':fileio', ':sqlitedemo1'

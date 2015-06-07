@@ -13,6 +13,7 @@
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/fileio" />
             <option value="$PROJECT_DIR$/preferenceactivity2" />
+            <option value="$PROJECT_DIR$/sqlitedemo1" />
           </set>
         </option>
       </GradleProjectSettings>

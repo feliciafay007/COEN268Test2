@@ -2,6 +2,7 @@ package test1.ui.android.felicia.fileio;
 
 import android.content.Context;
 import android.graphics.AvoidXfermode;
+import android.os.Environment;
 import android.util.Log;
 
 import java.io.BufferedInputStream;
@@ -16,10 +17,57 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 
+
+public class FileOperations {
+    private File myDir ;
+
+    public FileOperations(final Context context) {
+        myDir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS);
+    }
+
+    public Boolean external_write(String fname, String fcontent){
+        try {
+            File secondFile= new File(myDir, fname);
+            if (secondFile.getParentFile().mkdirs()) {
+                secondFile.createNewFile();
+                FileOutputStream fos = new FileOutputStream(secondFile);
+                fos.write(fcontent.getBytes());
+                fos.flush();
+                fos.close();
+                return true;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    public String external_read(String fname){
+        StringBuilder total = new StringBuilder();
+        try {
+            File secondInputFile = new File(myDir + "/text/", fname);
+            InputStream secondInputStream = new BufferedInputStream(new FileInputStream(secondInputFile));
+            BufferedReader r = new BufferedReader(new InputStreamReader(secondInputStream));
+            String line;
+            while ((line = r.readLine()) != null) {
+                total.append(line);
+            }
+            r.close();
+            secondInputStream.close();
+            Log.d("File", "File contents: " + total);
+            return total.toString();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return total.toString();
+    }
+}
+
+/*
+// 安装app后第一次I/O正确，接下来错误。
 //path = Environment.getExternalStoragePublicDirectory(
 //        Environment.DIRECTORY_MOVIES);
 //        File file = new File(path, "/" + fname);
-
 public class FileOperations {
     private File myDir ;
     public FileOperations(final Context context) {
@@ -36,12 +84,12 @@ public class FileOperations {
                 fos.write(fcontent.getBytes());
                 fos.flush();
                 fos.close();
+                return true;
             }
         } catch (Exception e) {
             e.printStackTrace();
-            return false;
         }
-        return true;
+        return false;
     }
     public String external_read(String fname){
         StringBuilder total = new StringBuilder();
@@ -63,6 +111,8 @@ public class FileOperations {
         return total.toString();
     }
 }
+*/
+
 
 /*
 //错误原因： open failed: EROFS (R, 建议修改方式，强制使用external storage, 然后在manifest中写明permission
