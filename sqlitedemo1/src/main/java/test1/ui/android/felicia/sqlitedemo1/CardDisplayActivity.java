@@ -1,10 +1,13 @@
 package test1.ui.android.felicia.sqlitedemo1;
 
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ListView;
 
 
 public class CardDisplayActivity extends ActionBarActivity {
@@ -13,7 +16,22 @@ public class CardDisplayActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_card_display);
-        
+
+        // TodoDatabaseHandler is a SQLiteOpenHelper class connecting to SQLite
+        ZooDbHelper handler = new ZooDbHelper(this);
+
+        // Get access to the underlying writeable database
+        SQLiteDatabase db = handler.getWritableDatabase();
+
+        // Query for items from the database and get a cursor back
+        String[] resultColumns = {ZooDbHelper.ID_COLUMN, ZooDbHelper.NAME_COLUMN, ZooDbHelper.DESCRIPTION_COLUMN, ZooDbHelper.FILE_PATH_COLUMN};
+        Cursor cursor = db.query(ZooDbHelper.DATABASE_TABLE, resultColumns, null, null, null, null, null);
+
+        // Attach cursor adapter to the ListView
+        // Setup cursor adapter using cursor from last step
+        ZooAdapter adapter = new ZooAdapter(this, cursor);
+        ListView listView = (ListView) findViewById(R.id.listView);
+        listView.setAdapter(adapter);
     }
 
     @Override

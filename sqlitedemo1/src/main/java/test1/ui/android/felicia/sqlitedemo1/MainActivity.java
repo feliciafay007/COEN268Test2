@@ -18,7 +18,7 @@ import android.widget.TextView;
 import org.w3c.dom.Text;
 
 
-public class MainActivity extends Activity {
+public class MainActivity extends ActionBarActivity {
     private Button buttonShow;
     private Button buttonAdd ;
     private Button buttonDelete;
